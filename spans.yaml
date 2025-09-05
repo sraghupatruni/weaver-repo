@@ -1,0 +1,13 @@
+groups:
+  - id: span.http.1
+    type: span
+    brief: "Span for HTTP layer operations."
+    stability: stable
+    span_kind: server
+    attributes:
+      - ref: http.request.body_size
+        requirement_level: required
+      - ref: http.request.method
+        requirement_level: required
+      - ref: server.address
+        requirement_level: required

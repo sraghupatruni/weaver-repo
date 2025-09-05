@@ -1,0 +1,8 @@
+name: telemetry
+description: semantic conventions for service
+semconv_version: 1.0.0
+schema_base_url: https://opentelemetry.io/schemas/1.37.0
+
+files:
+  - attributes.yaml
+  - spans.yaml
