@@ -1,0 +1,28 @@
+{%- if groups is defined and groups is not empty %}
+# Span Conventions
+
+This document defines the custom span conventions for the registry.
+
+{% for group in groups %}
+{%- if group.type == "span" %}
+## `{{ group.id }}`
+
+**Brief:** {{ group.brief }}
+
+**Kind:** `{{ group.span_kind | default('n/a') }}`
+
+**Stability:** `{{ group.stability | default('n/a') }}`
+
+{%- if group.attributes is defined and group.attributes is not empty %}
+### Attributes
+
+| Attribute | Type | Requirement | Brief |
+|---|---|---|---|
+{%- for attribute in group.attributes %}
+| `{{ attribute.ref | default('n/a') }}` | `{{ attribute.resolved.type | default('n/a') }}` | `{{ attribute.requirement_level | default('n/a') }}` | {{ attribute.resolved.brief | default('n/a') }} |
+{%- endfor %}
+{%- endif %}
+
+{%- endif %}
+{%- endfor %}
+{%- endif %}
