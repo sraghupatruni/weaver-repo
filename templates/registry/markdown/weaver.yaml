@@ -1,0 +1,10 @@
+templates:
+  - pattern: spans.md.j2
+    filter: '.'
+    application_mode: single
+    file_name: spans.md
+
+  - pattern: attributes.md.j2
+    filter: '.'
+    application_mode: single
+    file_name: attributes.md
