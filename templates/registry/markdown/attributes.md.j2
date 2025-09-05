@@ -1,0 +1,22 @@
+{%- if groups is not none and groups is not empty %}
+# Attribute Conventions
+
+This document defines the custom attribute conventions for the registry.
+
+{% for group in groups %}
+{%- if group.type == "attribute_group" %}
+## {{ group.id }}
+
+**Brief:** {{ group.brief }}
+
+{%- if group.attributes is defined and group.attributes is not empty %}
+| Attribute | Type | Stability | Brief | Examples |
+|---|---|---|---|---|
+{%- for attribute in group.attributes %}
+| `{{ attribute.id | default('n/a') }}` | `{{ attribute.type | default('n/a') }}` | `{{ attribute.stability | default('n/a') }}` | {{ attribute.brief | default('n/a') }} | `{{ attribute.examples | default('n/a') | join(', ') }}` |
+{%- endfor %}
+{%- endif %}
+
+{%- endif %}
+{%- endfor %}
+{%- endif %}
