@@ -1,0 +1,24 @@
+groups:
+  - id: http.attributes
+    type: attribute_group
+    brief: "A group of attributes for HTTP telemetry."
+    
+    # All of your individual attributes are listed here.
+    attributes:
+      - id: http.request.body_size
+        brief: "Size of the HTTP request body"
+        stability: stable
+        type: int
+        examples: [0, 240]
+      
+      - id: http.request.method
+        brief: "HTTP request method (GET, POST, HEAD, etc.)"
+        stability: stable
+        type: string
+        examples: ['GET', 'POST', 'HEAD']
+
+      - id: server.address
+        brief: "Address of the server handling the request"
+        stability: stable
+        type: string
+        examples: ['/s3/bucket?publicAccessBlock']
