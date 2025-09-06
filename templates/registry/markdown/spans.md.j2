@@ -19,7 +19,7 @@ This document defines the custom span conventions for the registry.
 | Attribute | Type | Requirement | Brief |
 |---|---|---|---|
 {%- for attribute in group.attributes %}
-| `{{ attribute.ref | default('n/a') }}` | `{{ attribute.resolved.type | default('n/a') }}` | `{{ attribute.requirement_level | default('n/a') }}` | {{ attribute.resolved.brief | default('n/a') }} |
+| `{{ attribute.ref | default('n/a') }}` | `{{ attribute.resolved.type | default('n/a') }}` | `{{ attribute.resolved.requirement_level | default('n/a') }}` | {{ attribute.resolved.brief | default('n/a') }} |
 {%- endfor %}
 {%- endif %}
 
